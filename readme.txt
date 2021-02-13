@@ -1,5 +1,5 @@
-=== Automate ActionKit Sync for Gravityforms ===
-Tags: GravityForms, Gravity Forms, ActionKit
+=== Automate Twilio Sync for Gravityforms ===
+Tags: GravityForms, Gravity Forms, Twilio, SMS, MMS
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: WordPress 3.6, Gravity form 1.9.14
@@ -9,28 +9,25 @@ Stable tag: 1.0
 
 == Description ==
 
-With this plugin, you can sync gravity form entries to ActionKit actions.
+With this plugin, you can trigger SMS/MMS messages from gravity form entries.
 
 Shamelessly forked with gratitude from https://github.com/rtCamp/automate-slack-invite-gravityforms
 
 = Requirements =
 
 1. Gravity Form plugin
-2. ActionKit instance base URL
+2. Twilio account
 
 
 = How this plugin works =
 
-1. Set the ActionKit instance base URL Gravity Form -> Settings -> ActionKit.
-2. Now, create a gravity form, go to Form Setting -> ActionKit and click on "Create one" link to set sync configuration.
-3. Specify an ActionKit page name and a field mapping. Your field mapping should include "email" at minimum!
-4. Once the user submits a gravity form, an action will be created with the corresponding parameters on the designated ActionKit page.
+1. Set the Twilio account SID, API token, and "from" phone number at Gravity Form -> Settings -> Twilio.
+2. Now, create a gravity form, go to Form Setting -> Twilio and click on "Create one" link to set configuration.
+3. Specify a message (with optional merge tags) and a recipient phone number (either hardcoded or merged from a form field)
+4. Optionally specify one or more image URLs (newline-separated) to make it an MMS instead of an SMS
+4. Once the user submits a gravity form, an SMS/MMS will be triggered.
 
-
-Note: Your Gravity Form must have an email field and it must be manually mapped to ActionKit's "email" parameter (unless you are doing something
-fancier involving an akid parameter) 
-
-Development of this plugin is done on [GitHub](https://github.com/thethirdbearsolutions/automate-actionkit-gravityforms). You can report issues and suggest features.
+Development of this plugin is done on [GitHub](https://github.com/thethirdbearsolutions/automate-twilio-gravityforms). You can report issues and suggest features.
 
 
 == Changelog ==
